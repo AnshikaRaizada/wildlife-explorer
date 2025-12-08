@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Portal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        body,h1,h2,h3,h4,h5 {
+            font-family: "Poppins", sans-serif
+        }
+        body {
+            font-size:16px;
+        }
+        .w3-half img{
+            margin-bottom:-6px;
+            margin-top:16px;
+            opacity:0.8;
+            cursor:pointer
+        }
+        .w3-half img:hover{
+            opacity:1
+        }
+    </style>
+</head>
+<body>
+<!-- HERO SECTION WITH BACKGROUND IMAGE -->
+ <div class="hero-section" id="home">
+  <div class="hero-overlay">
+    <h1>Wildlife Explorer</h1>
+    <p>Discover • Learn • Protect Wildlife</p>
+  </div>
+</div>
+<!-- ABOUT POPUP MODAL -->
+<div id="aboutPopup" class="about-modal">
+  <div class="about-box">
+
+    <span class="close-btn" onclick="closeAbout()">&times;</span>
+
+  </div>
+</div>
+<!-- ABOUT POPUP END -->
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-crimson w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>WildLife<br>Explorer</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#AnimalGallery" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Animal Gallery</a> 
+    <a href="#SpeciesInfo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Species Info</a> 
+    <a href="#Habitats" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Habitats</a> 
+    <a href="#EndangeredAnimals" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Endangered Animals</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-crimson w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-crimson w3-margin-right" onclick="w3_open()">&#9776;</a>
+  <span>🌟WILD Explorer</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="AnimalGallery">
+    <h1 class="w3-jumbo"><b>WildLife Explorer</b></h1>
+  <p style="Font-size:20x;color:black;">
+     Welcome to wildlife Explorer-your digital window into the world of wild animals.
+     Discover amazing species,explore their habitats and learn why protecting wildlife matters.
+  </p>
+    <h1 class="w3-xxxlarge w3-text-crimson"><b>Animal Gallery.</b></h1>
+    <hr style="width:50px;border:5px solid crimson" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="images/Image1.jpeg" style="width:100%" onclick="onClick(this)" alt="Bengal Wild Tiger in Forest">
+      <img src="images/Image3.jpeg" style="width:100%" onclick="onClick(this)" alt="King Cobra in Forest">
+      <img src="images/Image4.jpeg" style="width:100%" onclick="onClick(this)" alt="Grizzly bear in wilderness">
+      <img src="images/Image6.jpeg" style="width:100%" onclick="onClick(this)" alt="Bengal Tiger close-up">
+    </div>
+
+    <div class="w3-half">
+      <img src="images/Image9.jpeg" style="width:100%" onclick="onClick(this)" alt="Colorful tropical parrot">
+      <img src="images/Image7.jpeg" style="width:100%" onclick="onClick(this)" alt="Panda Bear eating bamboo">
+      <img src="images/Image8.jpeg" style="width:100%" onclick="onClick(this)" alt="African Elephant herd">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">&times;</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <h4 id="caption"></h4>
+    </div>
+  </div>
+
+  <!-- Species Info -->
+  <div class="w3-container" id="SpeciesInfo" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-crimson"><b>Species Information.</b></h1>
+    <hr style="width:50px;border:5px solid crimson" class="w3-round">
+    <p class="W3-large">
+       Learn more about the amazing species featured in our gallery. Discover their habitats, behavior, diet and why they are important for our ecosystem.
+    </p>
+    <!-- Tiger -->
+    <h2 class="w3-xlarge w3-text-crimson"><b>🐯 Bengal Tiger</b></h2>
+    <p>
+        The Bengal tiger is a strong and powerful wild animal found in forests and grasslands of India and nearby countries.
+        It has orange fur with black stripes which helps it hide while hunting. Tigers eat deer, wild boar, and other animals. Due to poaching and deforestation, their population has reduced a lot. Tigers are protected by wildlife laws and national parks.
+    </p>
+
+    <!-- Parrot -->
+    <h2 class="w3-xlarge w3-text-crimson"><b>🦜 Scarlet Macaw</b></h2>
+    <p>
+      Scarlet macaws are large, colorful tropical parrots found in the rainforests of Central and South America. 
+      They are known for their bright red, yellow, and blue feathers. These birds are very intelligent and can copy human speech. They eat fruits, nuts, and seeds, and help forests grow by spreading seeds. Due to illegal pet trade and deforestation, they are now facing serious danger.
+    </p>
+
+    <!-- Cobra -->
+    <h2 class="w3-xlarge w3-text-crimson"><b>🐍 Indian Cobra</b></h2>
+    <p>
+        The king cobra is the longest venomous snake in the world and is found in forests of India and Southeast Asia.
+        It feeds mainly on other snakes and small animals. Although it is dangerous, it avoids humans whenever possible. 
+        Due to deforestation and illegal capture, its population is under threat and needs protection.
+    </p>
+    <!-- Bear -->
+    <h2 class="w3-xlarge w3-text-crimson"><b>🐻 Brown Bear</b></h2>
+    <p>
+      The brown bear is a large and powerful wild animal found in forests and mountains of North America, Europe, and Asia. It has thick fur 
+      that helps it survive in cold climates. Brown bears are omnivores, meaning they eat plants, fruits, fish, insects, and small animals.
+      They play an important role in maintaining the balance of nature. Due to habitat loss and hunting, their population is slowly decreasing
+    </p>
+
+    <!-- Panda -->
+    <h2 class="w3-xlarge w3-text-crimson"><b>🐼 Giant Panda</b></h2>
+    <p>
+        The giant panda is a gentle and rare animal found mainly in the bamboo forests of China. It is easily recognized by its black and white fur. 
+        Pandas spend most of their day eating bamboo and resting. Because of habitat destruction and limited food supply, their population once became very low. 
+        Today, strong conservation efforts are helping protect pandas and slowly increase their numbers.
+    </p>
+    <!--Elephant-->>
+    <h2 class="w3-xlarge w3-text-crimson"><b>🐘 Elephant</b></h2>
+    <p>
+   The African elephant is the largest land animal in the world. It lives in forests and grasslands of Africa. Elephants use their long trunks to drink water, pick food, and communicate. 
+   They play an important role in maintaining forest and grassland ecosystems. Elephants are endangered because of illegal hunting for ivory and loss of habitat.
+    </p>
+
+
+  </div>
+  <!-- Habitat Section -->
+<!-- Habitats Section -->
+<div class="w3-container" id="Habitats" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-indigo"><b>Animal Habitats 🏞️</b></h1>
+    <hr style="width:50px;border:5px solid indigo" class="w3-round">
+
+    <p class="w3-large">
+        Explore the natural homes of animals. Each species lives in a unique environment 
+        that helps them survive and thrive.
+    </p>
+
+    <!-- ROW 1 -->
+    <div class="w3-row-padding">
+
+        <!-- Forest -->
+        <div class="w3-third w3-margin-bottom">
+            <div class="w3-card w3-padding w3-round-large">
+                🌳
+              <img src="images/forest.jpg"
+                   alt="Forest Habitat"
+                   style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:10px;">
+                
+              <h3><b>Forest Habitat</b></h3>
+              <p>Forests are rich natural homes for a wide variety of animals such as tigers, elephants, deer, birds, monkeys, and insects. They provide essential resources like food, fresh water, shelter, and protection. Forests also help maintain the balance of nature by supporting biodiversity and regulating the climate.</p>
+            </div>
+        </div>
+
+        <!-- Desert -->
+        <div class="w3-third w3-margin-bottom">
+            <div class="w3-card w3-padding w3-round-large">
+                🏜️
+               <img src="images/desert1.jpg"
+                   alt="Desert Habitat"
+                   style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:10px;">  
+                <h3><b>Desert Habitat</b></h3>
+                <p>Deserts are hot and dry environments where animals like camels, snakes, lizards, and foxes live. These animals are specially adapted to survive with very little water and extreme temperatures. They have strong bodies and unique behaviors that help them stay cool and conserve energy.</p>
+            </div>
+        </div>
+
+        <!-- Snowy Mountains -->
+        <div class="w3-third w3-margin-bottom">
+            <div class="w3-card w3-padding w3-round-large">
+                🏔️
+               <img src="images/snowy.png"
+                   alt="Snowy Mountains"
+                   style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:10px;">  
+                <h3><b>Snowy Mountains</b></h3>
+                <p>Snowy mountain habitats are cold and rocky regions where animals like snow leopards, mountain goats, yaks, and polar birds survive. These animals have thick fur and strong bodies to protect them from freezing temperatures. Mountain habitats are peaceful but very challenging for survival.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ROW 2 (Grasslands + Ocean + Rainforest) -->
+    <div class="w3-row-padding">
+
+        <!-- Grasslands -->
+        <div class="w3-third w3-margin-bottom">
+            <div class="w3-card w3-padding w3-round-large">
+                🐾
+              <img src="images/grassland1.jpg"
+                   alt="Grasslands"
+                   style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:10px;">  
+                <h3><b>Grasslands</b></h3>
+                <p>Grasslands are open spaces covered with grasses and are home to animals like lions, zebras, deer, buffaloes, and birds. These areas provide plenty of food for herbivores and hunting grounds for predators. Grasslands support large animal populations and play an important role in the food chain.</p>
+            </div>
+        </div>
+
+        <!-- Ocean -->
+        <div class="w3-third w3-margin-bottom">
+            <div class="w3-card w3-padding w3-round-large">
+                🌊
+              <img src="images/ocean.png"
+                   alt="Ocean Habitat"
+                   style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:10px;">  
+                <h3><b>Ocean Habitat</b></h3>
+                <p>The ocean is the largest habitat on Earth and is home to amazing creatures like whales, sharks, dolphins, fish, and turtles. It provides food, shelter, and breeding grounds for marine life. The ocean also plays a vital role in maintaining Earth’s climate and oxygen balance.</p>
+            </div>
+        </div>
+
+        <!-- Rainforest -->
+        <div class="w3-third w3-margin-bottom">
+            <div class="w3-card w3-padding w3-round-large">
+                🌴
+               <img src="images/rainforest.png"
+                   alt="Rainforest Habitat"
+                   style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:10px;">  
+                <h3><b>Rainforest Habitat</b></h3>
+                <p>Rainforests are warm, wet, and full of life. They are home to colorful birds, monkeys, frogs, insects, snakes, and many other animals. Rainforests receive heavy rainfall and have dense trees that provide shelter and food. They help control Earth’s climate and produce much of the world’s oxygen.</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+  <!--Endagered Animals -->
+  <!-- Endangered Animals Section -->
+<div class="w3-container" id="EndangeredAnimals" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Endangered Animals</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+
+    <!-- Awareness Banner -->
+    <div class="w3-panel w3-pale-red w3-leftbar w3-border-red w3-padding w3-animate-left" style="border-radius:10px;">
+        <p style="font-size:17px;">
+            ⚠️ <b>Many species are at risk of extinction.</b>  
+            Protecting wildlife is essential for maintaining Earth’s natural balance.
+        </p>
+    </div>
+
+    <div class="w3-row-padding">
+
+        <!-- Tiger (Endangered Box) -->
+        <div class="w3-third">
+            <div class="endangered-card w3-card w3-padding">
+                
+                <!-- Red Ribbon Badge -->
+                <span class="ribbon">ENDANGERED</span>
+
+                <img src="images/Image1.jpeg" style="width:100%; border-radius:10px;">
+                <h3 class="w3-margin-top">Tiger</h3>
+                <p>Tigers face threats from poaching and habitat loss, making conservation efforts critical.</p>
+
+                <button onclick="toggleInfo('tigerInfo')">Learn More</button>
+                <p id="tigerInfo" style="display:none; margin-top:10px;">
+                The Bengal tiger is a powerful predator found mainly in India. It helps control the population of herbivores and keeps the forest ecosystem balanced. 
+                Due to poaching and forest destruction, it is now an endangered species.
+</p>
+            </div>
+        </div>
+
+        <!-- Panda -->
+        <div class="w3-third">
+            <div class="endangered-card w3-card w3-padding">
+
+                <span class="ribbon">ENDANGERED</span>
+
+                <img src="images/gaint panda.jpeg" style="width:100%; border-radius:10px;">
+                <h3 class="w3-margin-top">Panda</h3>
+                <p>Pandas are endangered due to shrinking bamboo forests and low reproduction rates.</p>
+
+                <button onclick="toggleInfo('pandaInfo')">Learn More</button>
+                <p id="pandaInfo" style="display:none; margin-top:10px;">
+                The giant panda lives in bamboo forests of China. It mainly eats bamboo and rests most of the day.
+                Habitat loss once reduced their population badly, but conservation efforts are now helping pandas survive.
+</p>
+            </div>
+        </div>
+
+        <!-- Snow Leopard -->
+        <div class="w3-third">
+            <div class="endangered-card w3-card w3-padding">
+
+                <span class="ribbon">ENDANGERED</span>
+
+                <img src="images/snow leopard.jpeg" style="width:100%; border-radius:10px;">
+                <h3 class="w3-margin-top">Snow Leopard</h3>
+                <p>These rare cats are threatened by climate change and loss of mountain habitats.</p>
+
+                <button onclick="toggleInfo('leopardInfo')">Learn More</button>
+                <p id="leopardInfo" style="display:none; margin-top:10px;">
+                The snow leopard is found in cold mountain regions of Asia. It has thick fur and a long tail for balance. Climate change and habitat loss have made this beautiful animal endangered.
+</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Contact Section -->
+<div class="contact-section" id="contact">
+  <h2>Contact Wildlife Explorer</h2>
+  <p>If you have any questions, suggestions, or feedback, feel free to contact us.</p>
+
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email Address" required>
+    <input type="tel" id="mobile" placeholder="Mobile Number" required>
+
+    <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <p id="successMsg"></p>
+</div>  
+<!-- Footer -->
+<footer class="w3-black w3-padding-32 w3-center w3-margin-top full-footer">
+<div class="footer-inner">
+  <h3 class="w3-text-white">Wildlife Explorer</h3>
+  <p class="w3-text-grey">Discover • Learn • Protect Wildlife</p>
+
+  <!-- Quick Links -->
+  <div class="w3-row w3-margin-top">
+    <div class="w3-col s12 m3">
+      <a href="#home" class="w3-button w3-text-white w3-hover-green w3-small">Home</a>
+    </div>
+    <div class="w3-col s12 m3">
+      <a href="#About"class="w3-button w3-text-white w3-hover-green w3-small">About</a>
+    </div>
+    <div class="w3-col s12 m3">
+      <a href="#AnimalGallery" class="w3-button w3-text-white w3-hover-green w3-small">Animal Gallery</a>
+    </div>
+    <div class="w3-col s12 m3">
+      <a href="#contact" class="w3-button w3-text-white w3-hover-green w3-small">Contact</a>
+    </div>
+  </div>
+
+  <!-- Contact Info -->
+  <div class="w3-margin-top w3-text-grey">
+    <p>📧 Email: anshika9866@gmail.com</p>
+    <p>📞 Phone: +91-XXXXXXXXXX</p>
+  </div>
+
+  <!-- Copyright -->
+  <div class="w3-margin-top">
+    <p class="w3-small w3-text-grey">
+      © 2025 Wildlife Explorer | All Rights Reserved  
+    </p>
+    <p class="w3-small w3-text-grey">
+      Designed by Anshika Raizada❤️
+    </p>
+  </div>
+
+</footer>
+<!-- End page content -->
+</div>
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+// javascript'code for endangered animals.............
+
+function toggleInfo(id) {
+  var x = document.getElementById(id);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+// javascript code for contact section...................
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  document.getElementById("successMsg").innerText =
+    "Thank you! Your message has been sent successfully ✅";
+
+  this.reset(); // form clear karega
+});
+
+
+</script>
+</body>
+</html>
