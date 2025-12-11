@@ -345,44 +345,34 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 }
 /* --- MOBILE RESPONSIVE FIX --- */
+
+/* MOBILE FIX FOR HERO BACKGROUND IMAGE */
 @media (max-width: 768px) {
 
-  /* HERO SECTION FIX */
   .hero-section {
-    display: flex;
-    flex-direction: column !important;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+    width: 100% !important;
+    height: 70vh !important;   /* perfect mobile height */
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
   }
 
-  .hero-section img {
+  .hero-overlay {
     width: 100% !important;
-    height: auto !important;
-    object-fit: cover !important;
-  }
-
-  /* TEXT ADJUST */
-  .hero-text {
-    width: 100% !important;
-    padding: 10px;
     text-align: center !important;
+    padding: 20px !important;
   }
 
-  /* REMOVE ANY FIXED WIDTHS */
-  .hero-section * {
-    max-width: 100% !important;
+  .hero-section h1 {
+    font-size: 28px !important;
+    line-height: 34px !important;
   }
 
-  /* GALLERY SINGLE COLUMN */
-  .gallery,
-  .habitat-cards,
-  .animal-cards {
-    grid-template-columns: 1fr !important;
-  }
-
-  img {
-    width: 100% !important;
-    height: auto !important;
+  .hero-section p {
+    font-size: 16px !important;
   }
 }
